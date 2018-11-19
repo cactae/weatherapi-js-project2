@@ -1,4 +1,5 @@
 function loadDoc() {
+    // Valitsee kaupungin URL tiedot
     var url = "";
     switch (document.getElementById('city').value) {
         case "Helsinki":
@@ -13,6 +14,8 @@ function loadDoc() {
         case "New York":
             url = "http://api.openweathermap.org/data/2.5/forecast?id=5128581&units=metric&mode=JSON&APPID=5daa5123bdf9afd22d8bab894348c332";
             break;
+        default:
+            url = "http://api.openweathermap.org/data/2.5/forecast?q=helsinki&units=metric&mode=JSON&APPID=5daa5123bdf9afd22d8bab894348c332";
     }
     var jsonObj, kaupunki, saa, deg, direction = "";
     var xhttp = new XMLHttpRequest();
@@ -24,12 +27,12 @@ function loadDoc() {
 
         }
 
-
+        // Lisää kaupungin nimen tekstiin
         kaupunki = document.getElementById('kaupunki');
         kaupunki.innerHTML = "Weather in the city of " + jsonObj.city.name;
 
         saa = document.getElementById('saatiedot');
-
+        // muuttaa tuulen suunnan sanalliseksi
         deg = jsonObj.list[0].wind.deg;
 
         if (deg > 11.25 && deg < 33.75) {
@@ -65,10 +68,19 @@ function loadDoc() {
         } else {
             direction = "North";
         }
-
+        // Kirjoittaa kaikki tiedot sivulle
         saa.innerHTML = "<li><img src='http://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon + ".png'></li><br><li> Description: " + jsonObj.list[0].weather[0].description + "</li><br><li> Temperature: " + jsonObj.list[0].main.temp + "&#8451 </li><br><li>Wind: " + jsonObj.list[0].wind.speed + " m/s</li><br><li>Wind direction: " + direction + "</li></ul>";
 
-
+        /* Yön aikana eri ikonin taustaväri
+        
+        var hour = (new Date()).getHours();
+        console.log(hour);
+        if (hour < 24 && hour > 16) {
+            var night = document.getElementById('saatiedot').firstChild;
+            night.setAttribute("style", "background-color: lightslategray;");
+        }
+        
+        ---- sääikoni näyttää perustaustavärin läpi ---- */
     }
     xhttp.open("GET", url, true);
     xhttp.send();

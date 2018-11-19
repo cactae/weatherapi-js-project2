@@ -1,5 +1,41 @@
-body {}
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+h3#kaupunki {
+    margin-left: 42px;
+}
+
+ul#saatiedot {
+    list-style: none;
+}
 
 ul#saatiedot :nth-child(1) {
-    list-style: none;
+    background: lightskyblue;
+}
+
+img {
+    margin-left: 110px;
+}
+
+li {
+    width: 15%;
+    padding: 4px;
+    background: lightgrey;
+}
+
+select {
+    background: silver;
+    font-size: 1em;
+    padding: 1px 0 1px 2px;
+    margin-left: 5px;
+    width: 12%;
+}
+
+input {
+    border: 1px solid black;
+    font-size: 1em;
+    padding: 1px 0 1px 2px;
+    margin-left: 5px;
+    width: 12%;
 }
