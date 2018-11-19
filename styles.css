@@ -1,0 +1,5 @@
+body {}
+
+ul#saatiedot :nth-child(1) {
+    list-style: none;
+}
