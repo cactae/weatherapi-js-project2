@@ -42,7 +42,7 @@ function loadDoc() {
         } else if (this.readyState == 4 && this.status == 404) {
             error = document.getElementById('error');
             error.setAttribute("style", "display: block;");
-            error.innerHTML = "Error trying to find city name. You might need underscore in two part name like: new_york.";
+            error.innerHTML = "Error trying to find city name.";
         }
 
         // Lisää kaupungin nimen tekstiin
