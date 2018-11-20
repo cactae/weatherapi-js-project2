@@ -1,34 +1,39 @@
+<!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css"> </link>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"></link>
+
 </head>
 
 <body>
-    <!-- <button onclick="loadDoc()">Get data </button>-->
-    <!--<div id="content">
+    <!-- Tämä osio ei ole enää tarpeen
+        
+    <button onclick="loadDoc()">Get data </button>
+    <div id="content">
     </div>-->
 
-    <p>
-        Select a city from the list:
-        <select name="mySelect" id="city" onchange="loadDoc()">
+    Select a city from the list:
+    <select name="mySelect" id="city" onchange="loadDoc()">
             <option value="" hidden>Choose a city here</option>
-    <option value="Helsinki">Helsinki</option>
-    <option value="Stockholm">Stockholm</option>
-    <option value="Rome">Rome</option>
-    <option value="New York">New York</option>
-  </select><br>
-        <br> Or type in a search query:
-        <input id="citysearch">
-        <button id="search">Search</button>
+            <option value="Helsinki">Helsinki</option>
+            <option value="Stockholm">Stockholm</option>
+            <option value="Rome">Rome</option>
+            <option value="New York">New York</option>
+        </select><br>
+    <br> Or type in a search query:
+    <input id="citysearch" value="">
+    <button onclick="loadDoc()">Search</button>
 
 
-        <h3 id="kaupunki"></h3>
-        <ul id="saatiedot"></ul>
+    <h3 id="kaupunki"></h3>
+    <h3 id="error"></h3>
+    <ul id="saatiedot"></ul>
 
-        <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="scripts.js">
+    </script>
 </body>
 
 </html>
