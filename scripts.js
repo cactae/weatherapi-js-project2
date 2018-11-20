@@ -92,8 +92,8 @@ function loadDoc() {
         //Yön aikana eri sääikonin taustaväri
 
         var hour = (new Date()).getHours();
-        //console.log(hour);
-        if (hour < 6 || hour > 18) {
+        console.log(hour);
+        if (hour <= 6 || hour >= 18) {
             var night = document.getElementById('saatiedot').firstChild;
             night.setAttribute("style", "background-color: lightslategray;");
         } else {
