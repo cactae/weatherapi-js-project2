@@ -82,7 +82,7 @@ function loadDoc() {
         } else if (deg > 303.75 && deg < 326.25) {
             direction = "Northwest";
         } else if (deg > 326.25 && deg < 348.75) {
-            direction = "North North West";
+            direction = "North-northwest";
         } else {
             direction = "North";
         }
