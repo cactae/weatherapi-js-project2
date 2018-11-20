@@ -30,7 +30,7 @@ function loadDoc() {
 
     var jsonObj, kaupunki, saa, deg, direction, error = "";
 
-    // Hakee ja käsittelee API yhteyden. Antaa virheen jos haku ei tuota tulosta. 
+    // Hakee ja käsittelee API yhteyden. Antaa virheen jos yhteydessä on virhe ja haku ei tuota tulosta. 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -50,7 +50,7 @@ function loadDoc() {
         kaupunki.innerHTML = "Weather in the city of " + jsonObj.city.name;
 
         saa = document.getElementById('saatiedot');
-        // muuttaa tuulen suunnan sanalliseksi
+        // muuttaa tuulen suunnan sanalliseksi -- korjattu ja muokattu (NNE -> North-northeast) verkosta löytynyt listaus
         deg = jsonObj.list[0].wind.deg;
 
         if (deg > 11.25 && deg < 33.75) {
@@ -104,5 +104,5 @@ function loadDoc() {
     }
     xhttp.open("GET", url, true);
     xhttp.send();
-
+    // en tajua kuinka functiot() saisi toimimaan loadDoc(xhttp) sisällä/kanssa. Haluaisin tietoa tästä.
 };
