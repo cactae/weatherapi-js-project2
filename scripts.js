@@ -36,7 +36,7 @@ function loadDoc() {
         if (this.readyState == 4 && this.status == 200) {
             // document.getElementById("content").innerHTML = this.responseText;
             jsonObj = JSON.parse(xhttp.responseText);
-            //console.log(jsonObj);
+            console.log(jsonObj);
             error = document.getElementById('error');
             error.setAttribute("style", "display: none;");
         } else if (this.readyState == 4 && this.status == 404) {
@@ -87,7 +87,7 @@ function loadDoc() {
             direction = "North";
         }
         // Kirjoittaa kaikki tiedot sivulle
-        saa.innerHTML = "<li><img src='http://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon + ".png'></li><br><li> Description: " + jsonObj.list[0].weather[0].description + "</li><br><li> Temperature: " + jsonObj.list[0].main.temp + "&#8451 </li><br><li>Wind: " + jsonObj.list[0].wind.speed + " m/s</li><br><li>Wind direction: " + direction + "</li></ul>";
+        saa.innerHTML = "<li><img src='http://openweathermap.org/img/w/" + jsonObj.list[0].weather[0].icon + ".png'></li><br><li> Description: " + jsonObj.list[0].weather[0].description + "</li><br><li> Temperature: " + jsonObj.list[0].main.temp + "&#8451 </li><br><li>Clouds: " + jsonObj.list[0].clouds.all + "% </li><br><li>Wind: " + jsonObj.list[0].wind.speed + " m/s</li><br><li>Wind direction: " + direction + "</li><br><li>Humidity: " + jsonObj.list[0].main.humidity + "%</li><br></ul>";
 
         //Yön aikana eri sääikonin taustaväri
 
